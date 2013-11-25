@@ -1,0 +1,2743 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Arachlex
+</name>
+</assembly>
+<members>
+<member name="M:Arachlex.TransferListViewItem.RegisterListViewItem">
+	<summary>
+ リストビューアイテムを登録します
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TransferListViewItem.GetStatusStr(Arachlex.LanguageClass)">
+	<summary>
+ ステータスに描画すべき文字列を取得します
+ </summary>
+	<param name="lang">言語クラス</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TransferListViewItem.CreateStream(System.String,System.Boolean)">
+	<summary>
+ ファイルストリームを生成します
+ </summary>
+	<param name="fpath">ファイルパス</param>
+	<param name="errorMSG">エラーメッセージ</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TransferListViewItem.StopTransport">
+	<summary>
+ 転送を一時停止します
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TransferListViewItem.RestartTransport">
+	<summary>
+ 転送を再開します
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.OwnerAccount">
+	<summary>
+ このアイテムを転送しているオーナーの情報です
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.FileName">
+	<summary>
+ ファイル名
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.FileCachePath">
+	<summary>
+ ダウンロード一時保存パス
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.FilePath">
+	<summary>
+ ファイルフルパス
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.FileSize">
+	<summary>
+ ファイルサイズ
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.FileSeek">
+	<summary>
+ ファイルシーク
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.FileStream">
+	<summary>
+ ファイルストリーム
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.TransportID">
+	<summary>
+ 転送ID
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.TransportQueue">
+	<summary>
+ キューイング番号
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.TransportStatus">
+	<summary>
+ アイテムの転送状況
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.Transporting">
+	<summary>
+ 転送中のアイテムか
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.NowTransporting">
+	<summary>
+ フォルダ転送の状況も含めて、転送中か
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.TransportingDone">
+	<summary>
+ アイテムの転送が終了しているか
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.UploadStop">
+	<summary>
+ アップロード停止中か
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.DownloadStop">
+	<summary>
+ ダウンロード停止中か
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.ItemAttribute">
+	<summary>
+ アイテムの種類
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.ItemState">
+	<summary>
+ アイテムの転送状態
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.FolderSetedInItem">
+	<summary>
+ フォルダの中に含まれるファイルをセットしているか。Falseでしていない
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.FolderDoneFiles">
+	<summary>
+ フォルダ転送で終了したファイル数
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.FolderAllFiles">
+	<summary>
+ フォルダ転送で転送する全てのファイル数
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TransferListViewItem.FolderFiles">
+	<summary>
+ フォルダアップロード時の転送するフォルダ内のファイル
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TransferListViewItem.#ctor(Arachlex.AccountListViewItem,System.Boolean,System.UInt16,System.UInt16,System.Int64,System.String,System.String,Arachlex.DefinitionClass.Arachlex_Item,Arachlex.DefinitionClass.Arachlex_Transport)">
+	<summary>
+ コンストラクタ
+ </summary>
+	<param name="AddListView">リストビューアイテムをリストビューに追加するかどうか</param>
+	<param name="cID">ID</param>
+	<param name="cFileSize">ファイルサイズ</param>
+	<param name="cFilePath">ファイルパス</param>
+	<param name="cFileName">ファイル名</param>
+	<param name="cFolder">アイテムの種類</param>
+	<param name="cTransporter">アイテムの転送状態</param>
+	<param name="owAccount">オーナーアカウント</param>
+	<remarks></remarks>
+</member><member name="T:Arachlex.TransferListViewItem">
+	<summary>
+ 転送アイテムの情報を保持するクラスです
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.ShareClass.MyShareList.#ctor(System.String,Arachlex.DefinitionClass.Arachlex_Item,System.Int32)">
+	<summary>
+ コンストラクタ
+ </summary>
+	<param name="filepath">ファイル名</param>
+	<param name="fileAttribute">アイテムの種類</param>
+	<param name="ItemID">アイテムのID</param>
+	<remarks></remarks>
+</member><member name="T:Arachlex.ShareClass.MyShareList">
+	<summary>
+ 自身が相手に公開する情報を保持する構造体です
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Arachlex.ShareClass.ShareKind">
+	<summary>
+ どのようなリストを取得するか
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.ShareClass.GetOpenList(Arachlex.ShareClass.ShareKind,System.Int32)">
+	<summary>
+ フォルダリストを取得し返します
+ </summary>
+	<param name="GetKind">フォルダの種類</param>
+	<param name="id">ID</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.ShareClass.AddListView(System.Collections.Generic.List{Arachlex.FileInfoListViewItem})">
+	<summary>
+ リストビューにリストビューアイテムを追加します
+ </summary>
+	<param name="AddList">対象の情報</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.ShareClass.ShowListItem(System.String)">
+	<summary>
+ リストを構築します
+ </summary>
+	<param name="item">アイテム</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.ShareClass.GetMyOpenInfoFromID(System.Int32)">
+	<summary>
+ 指定IDから自身の公開している情報を取得します
+ </summary>
+	<param name="id">対象のID</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.ShareClass.ShareGetFileName(System.String,System.Boolean)">
+	<summary>
+ 指定したパスのファイル名を取得します
+ </summary>
+	<param name="nm">対象パス</param>
+	<param name="remotePath">リモート用のパスを取得するか</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.ShareClass.GetListFromPath(System.String)">
+	<summary>
+ 指定したパスのリストを取得します
+ </summary>
+	<param name="path">対象のパス</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.ShareClass.GetRootList">
+	<summary>
+ ルートリストを取得します
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.ShareClass.#ctor(Arachlex.Form1,Arachlex.AccountData)">
+	<summary>
+ コンストラクタ
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Arachlex.FileInfoListViewItem.FileSize">
+	<summary>
+ ファイルサイズ
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.FileInfoListViewItem.FileName">
+	<summary>
+ ファイル名
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.FileInfoListViewItem.FullPath">
+	<summary>
+ フルパス
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.FileInfoListViewItem.Attribute">
+	<summary>
+ アイテムの種類
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.FileInfoListViewItem.TimeStamp">
+	<summary>
+ タイムスタンプ
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.FileInfoListViewItem.ID">
+	<summary>
+ ID
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.FileInfoListViewItem.#ctor(System.Int64,System.String,Arachlex.DefinitionClass.Arachlex_Item,System.DateTime,System.Int32)">
+	<summary>
+ コンストラクタ
+ </summary>
+	<param name="fileKind">ファイルの種類</param>
+	<param name="fSize">ファイルサイズ</param>
+	<param name="fName">ファイル名</param>
+	<param name="fTimeStamp">タイムスタンプ</param>
+	<param name="ItemID">ファイルのID</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.FileInfoListViewItem.#ctor">
+	<summary>
+ コンストラクタ
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Arachlex.FileInfoListViewItem">
+	<summary>
+ ファイルの情報を保持するリストビューアイテムです。
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountData.AccountName">
+	<summary>
+ ダブらないアカウント名
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountData.UserComment">
+	<summary>
+ ユーザーのコメント
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountData.ConnectPort">
+	<summary>
+ 接続するためのポート
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountData.ConnectIP">
+	<summary>
+ 接続するIPアドレス
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountData.LoginPassword">
+	<summary>
+ 認証キー
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountData.UseEncryptNetwork">
+	<summary>
+ 通信経路を暗号化するか
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountData.DownloadAutoSave">
+	<summary>
+ ダウンロードの自動承認を有効にするか
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountData.DownloadAutoSavePath">
+	<summary>
+ ダウンロード自動承認時の保存場所
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountData.Share_Use">
+	<summary>
+ ファイル共有機能を利用するか
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountData.Share_OpenFolder">
+	<summary>
+ ファイル共有機能で公開するフォルダ
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountData.Chat_Location">
+	<summary>
+ チャットウィンドウの位置
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountData.Chat_Size">
+	<summary>
+ チャットウィンドウのサイズ
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountData.Chat_SplitDistanceInputBoxWithView">
+	<summary>
+ チャットウィンドウの入力ボックスとビューワの距離
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountData.Chat_SplitDistanceViewWithInfo">
+	<summary>
+ チャットウィンドウの入力ボックスとビューワの距離
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountData.Chat_ShowInfo">
+	<summary>
+ チャットの情報を表示するかどうか
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountData.Chat_ShowFindBox">
+	<summary>
+ チャットの検索ボックスを表示するか
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountData.#ctor">
+	<summary>
+ コンストラクタ
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountData.GetExitsSharedList">
+	<summary>
+ 存在することが保障された公開フォルダリストを取得します
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form_Account.AccountContactInfo(Arachlex.Form1,System.Boolean,Arachlex.AccountData)">
+	<summary>
+ 編集データを取得します
+ </summary>
+	<param name="OwnerForm">オーナーフォーム</param>
+	<param name="EditMode">編集モード</param>
+	<param name="EditAccountData">編集するアカウントデータ</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.DoNotify(System.String,System.String)">
+	<summary>
+ 通知します
+ </summary>
+	<param name="msg">メッセージ</param>
+	<param name="title">タイトル</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.AccountListViewRedraw(System.Int32)">
+	<summary>
+ アカウントリストボックスを再描画します
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.AddUserAccount(Arachlex.AccountListViewItem)">
+	<summary>
+ ユーザーアカウントを登録します
+ </summary>
+	<param name="info">追加する情報</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.DeleteUserAccount(Arachlex.AccountListViewItem)">
+	<summary>
+ ユーザーアカウントを削除します
+ </summary>
+	<param name="info">削除するアカウント情報</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.GetRoundRect(System.Drawing.Rectangle,System.Int32)">
+	<summary>
+ 角丸四角形を描画するためのGraphicsPathを取得します
+ </summary>
+	<param name="rect">描画範囲</param>
+	<param name="radius">角の円の半径</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.GetSelectTransferItem">
+	<summary>
+ 選択されている転送リストビューの転送アイテムをすべて取得します
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.GetAccountInfoFromAccountName(System.String)">
+	<summary>
+ アカウント名からユーザーアカウント情報を取得します
+ </summary>
+	<param name="name">検索するアカウント名</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.ExistAccountName(System.String)">
+	<summary>
+ アカウント名がダブっているか調べます
+ </summary>
+	<param name="AccountName">調べるアカウント名</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.ChangeAccountListSortMode(System.Int32,System.Boolean,System.Boolean)">
+	<summary>
+ アカウントリストのソートモードを変更します
+ </summary>
+	<param name="newColumn">新しいカラムインデックス</param>
+	<param name="DoSort">ソートするか</param>
+	<param name="ChangeSortOrder">ソートオーダーを変更するか</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.ChangeTransferListSortMode(System.Int32,System.Boolean,System.Boolean)">
+	<summary>
+ ファイル転送リストのソートモードを変更します
+ </summary>
+	<param name="newColumn">ソートするカラム</param>
+	<param name="DoSort">ソートするか</param>
+	<param name="ChangeSortOrder">ソートオーダーを変更するか</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.ChangeShareListSortMode(System.Int32,System.Boolean,System.Boolean)">
+	<summary>
+ ファイル共有リストのソートモードを変更します
+ </summary>
+	<param name="newColumn">新しいカラム</param>
+	<param name="DoSort">ソートするか</param>
+	<param name="ChangeSortOrder">ソートオーダーを変更するか</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.ChangeEnabled">
+	<summary>
+ Enabledを変更します
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.OpenFileOrFolder(Arachlex.TransferListViewItem)">
+	<summary>
+ ファイルかフォルダをオープンします
+ </summary>
+	<param name="tInfo">オープンする情報を持っているアイテム</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.AddIconToImageList(System.String)">
+	<summary>
+ 指定拡張子のアイコンをイメージリストに登録します
+ </summary>
+	<param name="keyname">取得する対象の拡張子</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.FindList(System.String)">
+	<summary>
+ リストからアイテムを検索します
+ </summary>
+	<param name="searchStr">検索する文字列</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.ShowChatWindow(Arachlex.AccountListViewItem)">
+	<summary>
+ 指定したアカウントのチャットウィンドウを開きます
+ </summary>
+	<param name="ua">対象のアカウント</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.ResetUserInterfaceLanguage">
+	<summary>
+ UIの言語表示をリセットします
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Form1.LoadLanguageFile">
+	<summary>
+ 言語ファイルをロードします
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.My.Resources.Resources.ResourceManager">
+	<summary>
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member><member name="P:Arachlex.My.Resources.Resources.Culture">
+	<summary>
+  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member><member name="T:Arachlex.My.Resources.Resources">
+	<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
+</member><member name="M:Arachlex.LoginServiceClass.LoginAccount(Arachlex.LoginServiceClass.ServiceMode,System.String,System.Net.Sockets.NetworkStream)">
+	<summary>
+ 接続認証
+ </summary>
+	<param name="service">認証モード</param>
+	<param name="AKey">認証キー</param>
+	<param name="ns">認証に使用するネットワークストリーム</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.LoginServiceClass.GenerateKeyFromPassword(System.Byte[],System.Int32,System.Byte[]@,System.Int32,System.Byte[]@)">
+	<summary>
+ パスワードから共有キーと初期化ベクタを生成する
+ </summary>
+	<param name="password">基になるパスワード</param>
+	<param name="keySize">共有キーのサイズ（ビット）</param>
+	<param name="key">作成された共有キー</param>
+	<param name="blockSize">初期化ベクタのサイズ（ビット）</param>
+	<param name="iv">作成された初期化ベクタ</param>
+</member><member name="M:Arachlex.LoginServiceClass.GetHash(System.Byte[],System.Byte[],System.Byte[],System.Security.Cryptography.SHA512Managed)">
+	<summary>
+ 認証用ハッシュを調べます
+ </summary>
+	<param name="clientBytes">クライアントのキー</param>
+	<param name="serverBytes">サーバのキー</param>
+	<param name="keyBytes">認証キー</param>
+	<param name="hash">計算にしようするSHA-512インスタント</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.LoginServiceClass.GetRandomBytes(System.Int32)">
+	<summary>
+ ランダムなバイト配列を取得します
+ </summary>
+	<param name="len">取得するバイト配列の長さ</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.LoginServiceClass.EncryptBytes(System.Byte[])">
+	<summary>
+ 文字列の暗号化関数
+ </summary>
+	<param name="Bytes">暗号化するバイト配列</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.LoginServiceClass.DecryptBytes(System.Byte[])">
+	<summary>
+ 文字列の復号化関数
+ </summary>
+	<param name="bytes">復号化対象の暗号化されたバイト配列</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.LoginServiceClass.GetSendData(System.Byte[])">
+	<summary>
+ 送信するデータを作成します
+ </summary>
+	<param name="senddata">送信するデータ配列</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.LoginServiceClass.RecData">
+	<summary>
+ データを取得します
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.DateType">
+	<summary>
+ DateType
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CAccount_Connect">
+	<summary>
+ MainWindow Account ContextMenu Connect
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CAccount_Reconnect">
+	<summary>
+ MainWindow Account ContextMenu Reconnect
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CAccount_Chat">
+	<summary>
+ MainWindow Account ContextMenu Chat
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CAccount_AddAccount">
+	<summary>
+ MainWindow Account ContextMenu AddAccount
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CAccount_EditAccount">
+	<summary>
+ MainWindow Account ContextMenu EditAccount
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CAccount_DeleteAccount">
+	<summary>
+ MainWindow Account ContextMenu DeleteAccount
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CAccount_Sort">
+	<summary>
+ MainWindow Account ContextMenu Sort
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CAccount_Sort_AccountName">
+	<summary>
+ MainWindow Account ContextMenu Sort AccountName
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CAccount_Sort_LoginStatus">
+	<summary>
+ MainWindow Account ContextMenu Sort LoginStatus
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CAccount_Setting">
+	<summary>
+ MainWindow Account ContextMenu Setting
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CTransport_Open">
+	<summary>
+ MainWindow Transport ContextMenu Open
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CTransport_PriorityUp">
+	<summary>
+ MainWindow Transport ContextMenu PriorityUp
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CTransport_PriorityDown">
+	<summary>
+ MainWindow Transport ContextMenu PriorityDown
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CTransport_Pause">
+	<summary>
+ MainWindow Transport ContextMenu Pause
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CTransport_Restart">
+	<summary>
+ MainWindow Transport ContextMenu Restart
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CTransport_Stop">
+	<summary>
+ MainWindow Transport ContextMenu Stop
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CTransport_Delete">
+	<summary>
+ MainWindow Transport ContextMenu Delete
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CTransport_Sort">
+	<summary>
+ MainWindow Transport ContextMenu Sort
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CTransport_Sort_Remote">
+	<summary>
+ MainWindow Transport ContextMenu Sort Remote
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CTransport_Sort_Priority">
+	<summary>
+ MainWindow Transport ContextMenu Sort Priority
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CTransport_Sort_FileName">
+	<summary>
+ MainWindow Transport ContextMenu Sort FileName
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CTransport_Sort_FullPath">
+	<summary>
+ MainWindow Transport ContextMenu Sort FullPath
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CTransport_Sort_Size">
+	<summary>
+ MainWindow Transport ContextMenu Sort Size
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CTransport_Sort_Status">
+	<summary>
+ MainWindow Transport ContextMenu Sort Status
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CTransport_ListMode">
+	<summary>
+ MainWindow Transport ContextMenu ListMode
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CTransport_SearchBox">
+	<summary>
+ MainWindow Transport ContextMenu SearchBox
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CTransport_AllSelect">
+	<summary>
+ MainWindow Transport ContextMenu AllSelect
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_DownloadMenu">
+	<summary>
+ MainWindow Transport DownloadMenu
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_Download_Approval">
+	<summary>
+ MainWindow Transport DownloadMenu Approvalo
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_Download_AllApproval">
+	<summary>
+ MainWindow Transport Download AllApproval
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_Download_Resume">
+	<summary>
+ MainWindow Transport Download_Resume
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_UploadMenu">
+	<summary>
+ MainWindow Transport UploadMenu
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_Upload_File">
+	<summary>
+ MainWindow Transport Upload File
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_Upload_Folder">
+	<summary>
+ MainWindow Transport Upload Folder
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_Pause">
+	<summary>
+ MainWindow Transport Pause
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_Restart">
+	<summary>
+ MainWindow Transport Restart
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_Stop">
+	<summary>
+ MainWindow Transport Stop
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_Delete">
+	<summary>
+ MainWindow Transport Delete
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_DoneDelete">
+	<summary>
+ MainWindow Transport DoneDelete
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_GoShareList">
+	<summary>
+ MainWindow Transport GoShareList
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_Column_Remote">
+	<summary>
+ MainWindow Transport Column Remote
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_Column_Priority">
+	<summary>
+ MainWindow Transport Column Priority
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_Column_FileName">
+	<summary>
+ MainWindow Transport Column FileName
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_Column_FullPath">
+	<summary>
+ MainWindow Transport Column FullPath
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_Column_Size">
+	<summary>
+ MainWindow Transport Column Size
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Transport_Column_Status">
+	<summary>
+ MainWindow Transport Column Status
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CShare_Download">
+	<summary>
+ MainWindow Share ContextMenu Download
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CShare_Up">
+	<summary>
+ MainWindow Share ContextMenu Up
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CShare_Refresh">
+	<summary>
+ MainWindow Share ContextMenu Refresh
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CShare_Root">
+	<summary>
+ MainWindow Share ContextMenu Root
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CShare_Sort">
+	<summary>
+ MainWindow Share ContextMenu Sort
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CShare_Sort_FileName">
+	<summary>
+ MainWindow Share ContextMenu Sort FileName
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CShare_Sort_Extension">
+	<summary>
+ MainWindow Share ContextMenu Sort Extesnion
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CShare_Sort_Size">
+	<summary>
+ MainWindow Share ContextMenu Sort Size
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CShare_Sort_DateModified">
+	<summary>
+ MainWindow Share ContextMenu Sort DateModified
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CShare_SearchBox">
+	<summary>
+ MainWindow Share ContextMenu SearchBox
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_CShare_AllSelect">
+	<summary>
+ MainWindow Share ContextMenu AllSelect
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Share_Download">
+	<summary>
+ MainWindow Share Download
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Share_Up">
+	<summary>
+ MainWindow Share Up
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Share_Refresh">
+	<summary>
+ MainWindow Share Refresh
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Share_Root">
+	<summary>
+ MainWindow Share Root
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Share_GoTransportList">
+	<summary>
+ MainWindow Share GoTransportList
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Share_Column_FileName">
+	<summary>
+ MainWindow Share Column FileName
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Share_Column_Extension">
+	<summary>
+ MainWindow Share Column Extension
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Share_Column_Size">
+	<summary>
+ MainWindow Share Column Size
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Share_Column_DateModified">
+	<summary>
+ MainWindow Share Column DateModified
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_SearchBox_SearchButton">
+	<summary>
+ MainWindow SearchBox SearchButton
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Infomation_ConnectStartTime">
+	<summary>
+ MainWindow Infomation ConnectStartTime
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Infomation_ConnectTime">
+	<summary>
+ MainWindow Infomation ConnectTime
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Infomation_SumReceiveSize">
+	<summary>
+ MainWindow Infomation SumReceiveSize
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Infomation_SumSendSize">
+	<summary>
+ MainWindow Infomation SumSendSize
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Infomation_SendSpeed">
+	<summary>
+ MainWindow Infomation SendSpeed
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Infomation_ReceiveSpeed">
+	<summary>
+ MainWindow Infomation ReceiveSpeed
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Infomation_YourVersion">
+	<summary>
+ MainWindow Infomation YourVersion
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Infomation_YourProtocolVersion">
+	<summary>
+ MainWindow Infomation YourProtocolVersion
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Infomation_MyVersion">
+	<summary>
+ MainWindow Infomation MyVersion
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Infomation_MyProtocolVersion">
+	<summary>
+ MainWindow Infomation MyProtocolVersion
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Infomation_YourIPAddress">
+	<summary>
+ MainWindow Infomation YourIPAddress
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Infomation_YourPort">
+	<summary>
+ MainWindow Infomation YourPort
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Infomation_RecEncryptDataNum">
+	<summary>
+ MainWindow Infomation RecEncryptDataNum
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Infomation_SendEncryptDataNum">
+	<summary>
+ MainWindow Infomation SendEncryptDataNum
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_PortListenErrorMSG">
+	<summary>
+ MainWindow PortListenErrorMSG
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Drawing_Transport_NotApproval">
+	<summary>
+ MainWindow Drawing Transport NotApproval
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Drawing_Transport_ErrorDone">
+	<summary>
+ MainWindow Drawing Transport ErrorDone
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Drawing_Transport_Done">
+	<summary>
+ MainWindow Drawing Transport Done
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Drawing_Transport_DownloadStop">
+	<summary>
+ MainWindow Drawing Transport DownloadStop
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Drawing_Transport_UploadStop">
+	<summary>
+ MainWindow Drawing Transport UploadStop
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Drawing_Transport_QueueStop">
+	<summary>
+ MainWindow Drawing Transport QueueStop
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Drawing_Transport_Folder">
+	<summary>
+ MainWindow Draing Transport Folder
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_DialogTitle_AllApproval">
+	<summary>
+ MainWindow DialogTitle AllApproval
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_DialogTitle_UploadFile">
+	<summary>
+ MainWindow DialogTitle UploadFile
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_DialogTitle_UploadFolder">
+	<summary>
+ MainWindow DialogTitle UploadFolder
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Dialog_UploadFileToAllUsers">
+	<summary>
+ MainWindow DialogMSG UploadFileToAllUsers
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Dialog_Stop">
+	<summary>
+ MainWindow DialogMSG Stop
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Dialog_Delete">
+	<summary>
+ MainWindow DialogMSG Delete
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.MainForm_Dialog_Quit">
+	<summary>
+ MainWindow Dialog Quit
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_Title">
+	<summary>
+ SettingWindow Title
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_Version">
+	<summary>
+ SettingWindow Version
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_Version_SoftwareName">
+	<summary>
+ SettingWindow Version SoftwareName
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_Version_Version">
+	<summary>
+ SettingWindow Version Version
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_Version_ProtocolVersion">
+	<summary>
+ SettingWindow Version ProtocolVersion
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_Version_Developer">
+	<summary>
+ SettingWindow Version Developer
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_Version_ToolbarIcon">
+	<summary>
+ SettingWindow Version ToolbarIcon
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_Version_ExeIcon">
+	<summary>
+ SettingWindow Version ExeIcon
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_General">
+	<summary>
+ SettingWindow General
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_General_AlwaysOnTop">
+	<summary>
+ SettingWinwow General AlwaysOnTop
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_General_HideWhenMinimization">
+	<summary>
+ SettingWindow General HideWhenMinimization
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_General_Port">
+	<summary>
+ SettingWindow General Port
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_General_AllowMultipleStarts">
+	<summary>
+ SettingWindow General AllowMultipleStarts
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_MyAccount">
+	<summary>
+ SettingWindow MyAccount
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_MyAccount_AccountName">
+	<summary>
+ SettingWindow MyAccount_AccountName
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_MyAccount_Comment">
+	<summary>
+ SettingWindow MyAccount Comment
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_Notify">
+	<summary>
+ SettingWindow Notify
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_Notify_WhenConnect">
+	<summary>
+ SettingWindow Notify WhenConnect
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_Notify_WhenReceiveMessage">
+	<summary>
+ SettingWindow Notify WhenReceiveMessage
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_Notify_WhenDoneUpload">
+	<summary>
+ SettingWindow Notify WhenDoneUpload
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_Notify_WhenDoneDownload">
+	<summary>
+ SettingWindow Notify WhenDoneDownload
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_Notify_WhenUpload">
+	<summary>
+ SettingWindow Notify WhenUpload
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_Cancel">
+	<summary>
+ SettingWindow Cancel
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.SettingForm_Ok">
+	<summary>
+ SettingWindow Ok
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.ChatForm_CView_Copy">
+	<summary>
+ ChatWindow ChatView ContextMenu Copy
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.ChatForm_CView_AllSelect">
+	<summary>
+ ChatWindow ChatView ContextMenu AllSelect
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.ChatForm_CView_AllDelete">
+	<summary>
+ ChatWindow ChatView ContextMenu AllDelete
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.ChatForm_CView_AlwaysOnTop">
+	<summary>
+ ChatWindow ChatView ContextMenu Always On Top
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.ChatForm_CView_ShowInfomation">
+	<summary>
+ ChatWindow ChatView ContextMenu ShowInfomation
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.ChatForm_CView_Search">
+	<summary>
+ ChatWindow ChatView ContextMenu Search
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.ChatForm_SearchButton">
+	<summary>
+ ChatWindow ChatView SearchButton
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_DestAccount">
+	<summary>
+ AccountWindow DestAccount
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_DestAccount_AccountName">
+	<summary>
+ AccountWindow DestAccount AccountName
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_DestAccount_IPAddress">
+	<summary>
+ AccountWindow DestAccount IPAddress
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_DestAccount_Port">
+	<summary>
+ AccountWindow DestAccount_Port
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_DestAccount_LoginKey">
+	<summary>
+ AccountWindow DestAccount LoginKey
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_DestAccount_Encrypt">
+	<summary>
+ AccountWindow DestAccount Encrypt
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_ApprovalDownload">
+	<summary>
+ AccountWindow ApprovalDownload
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_ApprovalDownload_SavePath">
+	<summary>
+ AccountWindow ApprovalDownload SavePath 
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_ApprovalDownload_SelectPath">
+	<summary>
+ AccountWindow ApprovalDownload SelectPath
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_EnableShare">
+	<summary>
+ AccountWindow EnableShare
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_CShare_AddFolder">
+	<summary>
+ AccountWindow Share ContextMenu AddFolder
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_CShare_DeleteFromList">
+	<summary>
+ AccountWindow Share ContextMenu DeleteFromList
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_CShare_DeleteUnExistFolder">
+	<summary>
+ AccountWindow Share ContextMenu DeleteUnExistFolder
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_DialogTitle_SelectFolder">
+	<summary>
+ AccountWindow DialogTitle SelectFolder
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_DialogMSG_AlreadyExist">
+	<summary>
+ AccountWindow DialogMSG AlreadyExist
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_DialogMSG_AccountNameTooShort">
+	<summary>
+ AccountWindow DialogMSG AccountNameTooShort
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_FormTitle">
+	<summary>
+ AccountWindow FormTitle
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_OKButton">
+	<summary>
+ AccountWindow OKButton
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountForm_CancelButton">
+	<summary>
+ AccountWindow CancelButton
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountClass_NotifyMSG_Chat(System.String)">
+	<summary>
+ AccountClass NotifyMSG Chat
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountClass_NotifyMSG_Upload(System.String)">
+	<summary>
+ AccountClass NotifyMSG Upload
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountClass_NotifyMSG_Connect(System.String)">
+	<summary>
+ AccountClass NotifyMSG Connect
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountClass_NotifyTitle_Connect">
+	<summary>
+ AccountClass NotifyTitle Connect
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountClass_DialogMSG_MaxNumUpload">
+	<summary>
+ AccountClass DialogMSG MaxNumUpload
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountClass_DialogTitle_UploadApprovalSavePath(System.String)">
+	<summary>
+ AccountClass DialogTitle UploadApprovalSavePath
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountClass_DialogTitle_ResumeFile(System.String)">
+	<summary>
+ AccountClass DialogTitle ResumeFile
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountClass_DialogTitle_ResumeFolder(System.String)">
+	<summary>
+ AccountClass DialogTitle ResumeFolder
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountClass_DialogMSG_MustNotResume">
+	<summary>
+ AccountClass DialogMSG MustNotResume
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountClass_DialogTitle_SelectResumeFolder(System.String)">
+	<summary>
+ AccountClass_DialogTitle_SelectResumeFolder
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.LanguageClass.AccountClass_Chat_AppendMSG">
+	<summary>
+ AccountClass Chat AppendMSG
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_ChatMSG(System.String)">
+	<summary>
+ チャットメッセージを受信する
+ </summary>
+	<param name="msg">チャットのメッセージ</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_ItemUpload(System.UInt16,System.String)">
+	<summary>
+ アイテムのアップロード
+ </summary>
+	<param name="ID">ID</param>
+	<param name="msg">メッセージ</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_ItemApp(System.UInt16,System.String)">
+	<summary>
+ アイテムの転送を承認します
+ </summary>
+	<param name="ID">ID</param>
+	<param name="msg">メッセージ</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_ItemStop(System.UInt16)">
+	<summary>
+ アイテムの転送を一時停止します
+ </summary>
+	<param name="ID">ID</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_ItemRestart(System.UInt16)">
+	<summary>
+ アイテムの転送を再開します
+ </summary>
+	<param name="ID">ID</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_ItemDelete(System.UInt16)">
+	<summary>
+ アイテムを削除します
+ </summary>
+	<param name="ID">ID</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_ItemChangeQueue(System.UInt16,System.String)">
+	<summary>
+ アイテムの優先順位を変更します
+ </summary>
+	<param name="ID">ID</param>
+	<param name="msg">メッセージ</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_MakeFolder(System.UInt16,System.String)">
+	<summary>
+ フォルダを作成します
+ </summary>
+	<param name="ID">対象のID</param>
+	<param name="msg">メッセージ</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_NextFolderFile(System.UInt16,System.String)">
+	<summary>
+ 次のフォルダー内のファイルのセット
+ </summary>
+	<param name="ID">ID</param>
+	<param name="msg">メッセージ</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_NextFolderFileOk(System.UInt16)">
+	<summary>
+ フォルダ送信時の次のファイルをセットします
+ </summary>
+	<param name="ID">対象のID</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_FolderDone(System.UInt16)">
+	<summary>
+ フォルダ転送が終了
+ </summary>
+	<param name="ID">ID</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_SetSeek(System.UInt16,System.String)">
+	<summary>
+ アップロードアイテムのシーク位置を調整します
+ </summary>
+	<param name="ID">ID</param>
+	<param name="msg">メッセージ</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_SendFile(System.UInt16,System.Byte[])">
+	<summary>
+ ファイルデータの受信
+ </summary>
+	<param name="ID">ID</param>
+	<param name="bytes">データ</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_SendFileDone(System.UInt16)">
+	<summary>
+ アイテム送信が終了
+ </summary>
+	<param name="ID">ID</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_SyncItem(System.String)">
+	<summary>
+ アイテムを同期します
+ </summary>
+	<param name="msg">メッセージ</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_MyVersion(System.String)">
+	<summary>
+ バージョンチェック
+ </summary>
+	<param name="msg">メッセージ</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_ChangeComment(System.String)">
+	<summary>
+ コメントの更新
+ </summary>
+	<param name="msg">コメント</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_ChangeAccountName(System.String)">
+	<summary>
+ アカウント名の更新
+ </summary>
+	<param name="msg">アカウント名</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_ChangePort(System.String)">
+	<summary>
+ ポートの変更
+ </summary>
+	<param name="msg">ポート番号</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_Share_GetList(System.String)">
+	<summary>
+ 指定されたパスの内容を取得します
+ </summary>
+	<param name="msg">メッセージ</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.PRC_Share_Download(System.String)">
+	<summary>
+ ファイル共有リストの指定パスからアイテムをダウンロードします
+ </summary>
+	<param name="msg">メッセージ</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.Start_bgConnect">
+	<summary>
+ bgConnectスレッドを開始します。既にスレッドが動いている場合、何もしません
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.Stop_bgConnect">
+	<summary>
+ bgConnectスレッドを停止させます
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.bgConnect">
+	<summary>
+ 接続を試行するためのスレッド用メソッドです
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.Start_bgMSGRec">
+	<summary>
+ bgMSGRecスレッドを開始します。既にスレッドが動いている場合、何もしません
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.Stop_bgMSGRec">
+	<summary>
+ bgMSGRecスレッドを停止させます
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.bgMSGRec">
+	<summary>
+ メッセージを受信するためのスレッド用メソッドです
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.CloseMethod">
+	<summary>
+ 接続がとじたときにすること
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.ConnectMethod">
+	<summary>
+ 接続完了時にすること
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.AddToListView">
+	<summary>
+ リストビューへ登録します
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.GetUpEmptyItemID">
+	<summary>
+ 空いているファイルアップロードIDを調べます
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.GetNextQueue">
+	<summary>
+ 次に使えるフリーのキューイング番号を取得します
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.RemoveQueue(Arachlex.TransferListViewItem)">
+	<summary>
+ キューイングリストから指定したアイテムを除外する。
+ </summary>
+	<param name="tItem">キューイングからRemoveされたアイテム</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.SetQueue(Arachlex.TransferListViewItem,System.UInt16)">
+	<summary>
+ 優先順位を任意の値にセットしなおします
+ </summary>
+	<param name="tItem">対象の転送アイテム</param>
+	<param name="afterQueue">変更後の優先順位</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.GetSendItems">
+	<summary>
+ 送信中のアイテムがあるか調べます。Trueならある
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.GetInfoFromID(System.UInt16)">
+	<summary>
+ アイテム配列から指定IDのダウン情報を取得します。見つからない場合、-1を返します。
+ </summary>
+	<param name="id">ID番号</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.GetMostPriorityQueueItem(Arachlex.DefinitionClass.Arachlex_Transport)">
+	<summary>
+ 最も優先順位の高い転送アイテムを取得する
+ </summary>
+	<param name="itemState">アイテムの状態</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.SendFileData">
+	<summary>
+ データを送信します
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.NextFolderFile(Arachlex.TransferListViewItem)">
+	<summary>
+ 次のファイルを相手にセットします
+ </summary>
+	<param name="fInfo">アイテム情報</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.DeleteTransportInfoArray(Arachlex.TransferListViewItem)">
+	<summary>
+ アイテムを転送リストから削除します
+ </summary>
+	<param name="tInfo">対象の転送アイテム</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.AddTransportInfoArray(Arachlex.TransferListViewItem)">
+	<summary>
+ アイテムを転送リストに追加します
+ </summary>
+	<param name="tinfo">対象のアイテム</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.UploadItem(System.String,System.Boolean)">
+	<summary>
+ 指定したアイテムをアップロードします。続行不可能な場合False
+ </summary>
+	<param name="fPath">アップロードするパス</param>
+	<param name="ShowError">エラーを表示するか</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.UploadApporoval(Arachlex.TransferListViewItem,System.String)">
+	<summary>
+ 指定したアイテムのダウンロードを承認します
+ </summary>
+	<param name="dInfo">承認するダウンロード情報</param>
+	<param name="savepath">ダウンロード先フォルダ</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.ResumeApporoval(Arachlex.TransferListViewItem,System.String)">
+	<summary>
+ レジューム承認します
+ </summary>
+	<param name="dInfo">対象のアイテム</param>
+	<param name="path">保存先</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.ApendChat(System.String,System.String,System.DateTime,System.Boolean)">
+	<summary>
+ チャットメッセージを追加します
+ </summary>
+	<param name="msg">投稿メッセージ</param>
+	<param name="raiseName">投稿者名</param>
+	<param name="postDate">投稿日時</param>
+	<param name="rais">自分が投稿者か</param>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountListViewItem.ChatWindow">
+	<summary>
+ チャットウィンドウ
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountListViewItem.IndividualData">
+	<summary>
+ 個人データなど
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountListViewItem.UserChat">
+	<summary>
+ ユーザーのチャット履歴
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountListViewItem.TransportItem">
+	<summary>
+ このユーザーと転送しているアイテム
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountListViewItem.ShareInfo">
+	<summary>
+ 共有情報を管理する
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountListViewItem.TCPConnect">
+	<summary>
+ TCP接続情報
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountListViewItem.LastSendTime">
+	<summary>
+ ファイルデータ送信間隔
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.AccountListViewItem.MainSendBuffer">
+	<summary>
+ 送信バッファ
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.AccountListViewItem.#ctor(Arachlex.Form1,System.Boolean,System.Boolean,Arachlex.AccountData)">
+	<summary>
+ コストラクタ
+ </summary>
+	<param name="AForm">オーナーフォーム</param>
+	<param name="StartTryConnection">インスタンス生成時にアカウントへの接続試行を開始するか</param>
+	<param name="AddListView">リストビューにアイテムを追加するか</param>
+	<param name="AAccountData">アカウント情報</param>
+	<remarks></remarks>
+</member><member name="T:Arachlex.AccountListViewItem">
+	<summary>
+ 接続しているユーザーの情報を保持するためのクラスです
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.DefinitionClass.RetFileSize(System.Int64)">
+	<summary>
+ 単位を付けてファイルサイズを返します
+ </summary>
+	<param name="fSize">変換対象のバイト単位の値</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.DefinitionClass.GetRepetitionFileName(System.String)">
+	<summary>
+ 指定したパスの重複しないパスを返します
+ </summary>
+	<param name="fPath">対象のパス</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.DefinitionClass.GetRepetitionFolderName(System.String)">
+	<summary>
+ 指定したフォルダパスの重複しないパスを返します
+ </summary>
+	<param name="fpath">対象のフォルダパス</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.DefinitionClass.GetExtensionIcon(System.IntPtr,System.String)">
+	<summary>
+ 指定拡張子のアイコンを取得します
+ </summary>
+	<param name="exeStr">拡張子名</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.DefinitionClass.SetSuccessionArray(System.Collections.Generic.List{System.String}@)">
+	<summary>
+ Array1の配列内を調べ、全てオリジナルの値に整列させます
+ </summary>
+	<param name="Array1">対象の配列</param>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Main_Location">
+	<summary>
+ 自身のウィンドウの位置
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Main_Size">
+	<summary>
+ 自身のウィンドウのサイズ
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Main_MiniHide">
+	<summary>
+ 最小化時に隠すかどうか
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Main_TopMost">
+	<summary>
+ 常に手前に表示しているか
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Main_AllowMultipleStarts">
+	<summary>
+ 多重起動を許可するか
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Split_Main">
+	<summary>
+ スプリットコンテナのチャットとコンタクトリストとの分割サイズ
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.TransferList_ListMode">
+	<summary>
+ 転送リストの表示をリスト表示にするか
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.ShowFindBox">
+	<summary>
+ 検索ボックスを表示するか
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Language">
+	<summary>
+ 言語設定
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Sort_Account_Order">
+	<summary>
+ アカウントリストのソートオーダー
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Sort_Account_Column">
+	<summary>
+ アカウントリストのソートするカラム。ただし、ログイン状態でソートする場合はColumnIndexに1を指定
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Sort_Transfer_Order">
+	<summary>
+ 転送リストのソートオーダー
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Sort_Transfer_Column">
+	<summary>
+ 転送リストのソートするカラム
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Sort_Share_Order">
+	<summary>
+ 共有リストのソートオーダー
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Sort_Share_Column">
+	<summary>
+ 共有リストのソートするカラム
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Column_Transfer_Width">
+	<summary>
+ 転送リストの幅カラム
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Column_Transfer_DisplayIndex">
+	<summary>
+ 転送リストのディスプレイインデックス
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Column_Share_Width">
+	<summary>
+ 共有リストの幅カラム
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Column_Share_DisplayIndex">
+	<summary>
+ 共有リストのディスプレイインデックス
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.SaveDialogPath">
+	<summary>
+ 保存ダイアログの最初に表示するパス
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.OpenDialogPath">
+	<summary>
+ 開くダイアログの最初に表示するパス
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.AllSaveDialogPath">
+	<summary>
+ 一括承認ダイアログの表示パス
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Account_AccountName">
+	<summary>
+ アカウント名
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Account_Comment">
+	<summary>
+ アカウントのコメントです
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Account_Data">
+	<summary>
+ アカウントのデータです
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Connect_ListenPort">
+	<summary>
+ 接続待ちするポート番号
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Notify_Connect">
+	<summary>
+ 接続されたら通知するか
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Notify_ReceiveMSG">
+	<summary>
+ メッセージを受け取ったら通知するか
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Notify_DoneDownload">
+	<summary>
+ ダウンロードが完了したら通知する
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Notify_DoneUpload">
+	<summary>
+ アップロードが完了したら通知するか
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.Settings.Notify_Upload">
+	<summary>
+ アップロードされたら通知するか
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.Settings.#ctor">
+	<summary>
+ コンストラクタ
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.ChatMSG">
+	<summary>
+ チャットメッセージ
+ {ハンドル名} + vbcrlf + {中身}
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.ItemUpload">
+	<summary>
+ アップロードを開始する
+ [Upload{アイテムの種類} +vbcrlf + {Queue} + vbcrlf + {ファイル名} + vbcrlf + {[(File)ファイルサイズ] , [(Folder)全ファイル数]}]
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.ItemApp">
+	<summary>
+ ダウンロードを承認する
+ [Download(File){ファイルシーク位置}]
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.ItemStop">
+	<summary>
+ アイテムの転送を一時停止します
+ {[Nothing]}
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.ItemReStart">
+	<summary>
+ アイテムの転送を再開します
+ {[Nothing]}
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.ItemDelete">
+	<summary>
+ アイテムを削除します
+ {[Nothing]}
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.ItemChangeQueue">
+	<summary>
+ アイテムの優先順位を変更します
+ {変更後の優先順位}
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.MakeFolder">
+	<summary>
+ フォルダの作成
+ [Upload(Folder){ファイルリスト + vbcrlf}]
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.NextFolderFile">
+	<summary>
+ 次の送信ファイルをセットします
+ [Upload(Folder){ファイルの相対パス} + vbcrlf + {ファイルサイズ} + vbcrlf + {終了ファイル数}]
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.NextFolderFileOk">
+	<summary>
+ ダウンロード側のセットが完了した
+ [Download(Folder){[Nothing]}]
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.FolderDone">
+	<summary>
+ フォルダの転送完了
+ [Upload(Folder){[Nothing]}]
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.SetSeek">
+	<summary>
+ アップロード側のシーク位置を調整する
+ [Download{ファイルのシーク位置}]
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.SendFile">
+	<summary>
+ ファイル送信
+ [Upload{データ}]
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.SendFileOk">
+	<summary>
+ ファイルの送信を確認
+ [Download{[Nothing]}]
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.SendFileDone">
+	<summary>
+ ファイル送信が完了したことを知らせる
+ [Download{[Nothing]}]
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.SyncItem">
+	<summary>
+ リストの同期処理
+ {[Nothing] [OR] [ファイルリスト(ID + vbcr + ファイルサイズ) + vbcrlf]}
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.MyVersion">
+	<summary>
+ 自身のバージョン
+ {ソフトウェアバージョン} + vbcrlf + {プロトコルバージョン}
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.ChangeComment">
+	<summary>
+ 自身のコメントが変更された事を通知する
+ {変更後のコメント}
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.ChangeAccountName">
+	<summary>
+ 自身のアカウント名が変更された事を通知する
+ {変更後のアカウント名}
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.ChangePort">
+	<summary>
+ 自身のポート番号が変更された事を通知する
+ {変更後のポート番号}
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.Share_GetList">
+	<summary>
+ 指定パスの内容を取得します。
+ {取得の種類} [OR] {取得の種類} + vbcrlf + {ID}
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.Share_Download">
+	<summary>
+ 指定パスをダウンロードします。
+ {ID}
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.Share_List">
+	<summary>
+ リストの内容です。
+ {ファイルのリスト}
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Arachlex.TCPNetworkClass.Arachlex_TCP_Header.JUNK">
+	<summary>
+ 通信維持用ジャンクデータ
+ {[Nothing]}
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TCPNetworkClass.AceptInfo">
+	<summary>
+ 接続状態。Trueなら接続している
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TCPNetworkClass.SoftVersion">
+	<summary>
+ 通信相手のソフトバージョン
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TCPNetworkClass.SoftProtocol">
+	<summary>
+ 通信相手のプロトコルバージョン
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TCPNetworkClass.RemoteIp">
+	<summary>
+ 接続先IP
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TCPNetworkClass.RemotePort">
+	<summary>
+ 接続先ポート
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TCPNetworkClass.StartAceptTime">
+	<summary>
+ 接続開始の日時
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TCPNetworkClass.AceptTime">
+	<summary>
+ 通信継続時間
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TCPNetworkClass.AllReceiveSize">
+	<summary>
+ 総受信量
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TCPNetworkClass.AllSendSize">
+	<summary>
+ 総送信量
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TCPNetworkClass.OneReceiveSize">
+	<summary>
+ 一定間隔で受信した量
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TCPNetworkClass.OneSendSize">
+	<summary>
+ 一定間隔で送信した量
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TCPNetworkClass.SendEncryptDataNum">
+	<summary>
+ 暗号化したデータの送信回数
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TCPNetworkClass.ReceiveEncryptDataNum">
+	<summary>
+ 暗号化したデータの受信回数
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Arachlex.TCPNetworkClass.UseEncrypt">
+	<summary>
+ 送信データを暗号化するか
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TCPNetworkClass.StopListen">
+	<summary>
+ ポートのリッスンを中止します
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TCPNetworkClass.ResetOneSize">
+	<summary>
+ 受信量と送信量をリセットします
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TCPNetworkClass.NetworkClose">
+	<summary>
+ ネットワークの通信を終了させます
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TCPNetworkClass.Login(System.String,Arachlex.LoginServiceClass.ServiceMode,System.Boolean)">
+	<summary>
+ ログインします
+ </summary>
+	<param name="passwd">パスワード</param>
+	<param name="mode">モード</param>
+	<param name="UseEncrypt">その後の通信を暗号化するか</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TCPNetworkClass.ConnectionNetwork(System.String,System.Int32,System.String,System.Boolean)">
+	<summary>
+ サーバに接続します
+ </summary>
+	<param name="HostName">サーバIP</param>
+	<param name="HostPort">ポート番号</param>
+	<param name="accountname">送信するアカウント名</param>
+	<param name="ShowError">エラーを表示するか</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TCPNetworkClass.ListenPort(System.Int32,System.String@)">
+	<summary>
+ ポートをリッスンし、接続要求が来るのを待ちます
+ </summary>
+	<param name="port">Listen対象のポート</param>
+	<param name="accountname">相手のアカウント名</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TCPNetworkClass.SendPacket(System.Byte[],Arachlex.TCPNetworkClass.Arachlex_TCP_Header,System.UInt16)">
+	<summary>
+ パケットを送信します
+ </summary>
+	<param name="buf">バッファ</param>
+	<param name="header">ヘッダ</param>
+	<param name="File_ID">ファイルID</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TCPNetworkClass.SendPacket(System.String,Arachlex.TCPNetworkClass.Arachlex_TCP_Header,System.UInt16)">
+	<summary>
+ パケットを送信します
+ </summary>
+	<param name="msg">送信する文字列</param>
+	<param name="header">ヘッダ</param>
+	<param name="File_ID">ファイルID</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TCPNetworkClass.ReceiveData(System.Byte[]@,System.UInt16@,Arachlex.TCPNetworkClass.Arachlex_TCP_Header@)">
+	<summary>
+ データを受信します
+ </summary>
+	<param name="buf">読み取りバッファ</param>
+	<param name="File_ID">ファイルID</param>
+	<param name="header">ヘッダ</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TCPNetworkClass.EncryptData(System.Byte[])">
+	<summary>
+ データを暗号化します
+ </summary>
+	<param name="encBytes">暗号化対象のデータ</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TCPNetworkClass.DecryptData(System.Byte[])">
+	<summary>
+ データを復号化します
+ </summary>
+	<param name="decBytes">復号化対象のデータ</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TCPNetworkClass.SetEncrypt(System.Byte[])">
+	<summary>
+ 暗号化インスタンスをセットする
+ </summary>
+	<param name="key">暗号化キー</param>
+	<remarks></remarks>
+</member><member name="M:Arachlex.TCPNetworkClass.#ctor(System.Text.Encoding)">
+	<summary>
+ コンストラクタ
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Arachlex.DoubleBufferedListView">
+	<summary>
+ ダブルバッファされるリストビュー
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Arachlex.ListViewItemComparer.ComparerMode">
+	<summary>
+ 比較する方法
+ </summary>
+</member><member name="P:Arachlex.ListViewItemComparer.Column">
+	<summary>
+ 並び替えるListView列の番号
+ </summary>
+</member><member name="P:Arachlex.ListViewItemComparer.Order">
+	<summary>
+ 昇順か降順か
+ </summary>
+</member><member name="P:Arachlex.ListViewItemComparer.Mode">
+	<summary>
+ 並び替えの方法
+ </summary>
+</member><member name="P:Arachlex.ListViewItemComparer.ColumnModes">
+	<summary>
+ 列ごとの並び替えの方法
+ </summary>
+</member><member name="M:Arachlex.ListViewItemComparer.#ctor(System.Int32,System.Windows.Forms.SortOrder,Arachlex.ListViewItemComparer.ComparerMode)">
+	<summary>
+ ListViewItemComparerクラスのコンストラクタ
+ </summary>
+	<param name="col">並び替える列番号</param>
+	<param name="ord">昇順か降順か</param>
+	<param name="cmod">並び替えの方法</param>
+</member><member name="M:Arachlex.ListViewItemComparer.Compare(System.Object,System.Object)">
+	<summary>
+ xがyより小さいときはマイナスの数、大きいときはプラスの数、同じときは0を返す
+ </summary>
+	<param name="x"></param>
+	<param name="y"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

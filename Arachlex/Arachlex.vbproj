@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F4434FCA-421D-44EC-8FFC-80BF313D8AA6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Arachlex.My.MyApplication</StartupObject>
+    <RootNamespace>Arachlex</RootNamespace>
+    <AssemblyName>Arachlex</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <OptionStrict>On</OptionStrict>
+    <ApplicationIcon>EXE_ICON_LARGE.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Arachlex.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <RemoveIntegerChecks>true</RemoveIntegerChecks>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>None</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>false</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Arachlex.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <RemoveIntegerChecks>true</RemoveIntegerChecks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountData.vb" />
+    <Compile Include="AccountListViewItem.vb" />
+    <Compile Include="Form_Account.Designer.vb">
+      <DependentUpon>Form_Account.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Account.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_EditLanguage.Designer.vb">
+      <DependentUpon>Form_EditLanguage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_EditLanguage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LanguageClass.vb" />
+    <Compile Include="LoginServiceClass.vb" />
+    <Compile Include="TransferListViewItem.vb" />
+    <Compile Include="DefinitionClass.vb" />
+    <Compile Include="DoubleBufferedListView.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FileInfoListViewItem.vb" />
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Chat.Designer.vb">
+      <DependentUpon>Form_Chat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Chat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Setting.Designer.vb">
+      <DependentUpon>Form_Setting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Setting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListViewItemComparer.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="ShareClass.vb" />
+    <Compile Include="TCPNetworkClass.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Account.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_Account.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Chat.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_Chat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_EditLanguage.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_EditLanguage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Setting.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_Setting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EXE_ICON_LARGE.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
